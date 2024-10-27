@@ -1,2 +1,2 @@
 # CODSOFT
-Portfolio and other mini projects based on HTML, CSS
+This repository contains a basic PORTFOLIO project based on HTML, CSS and JavaScript.
