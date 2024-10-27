@@ -1,0 +1,1009 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: "poppins", sans-serif;
+  list-style: none;
+}
+
+body {
+  color: #ededed;
+  background-color: rgb(11, 231, 231);
+}
+@keyframes slideTop {  /*For animation in .navBar links <a>tag*/ /*For animation of "More About Me" btnbox*/ 
+  0% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+@keyframes slideRight { /*For animation in logo = Portfolio*/ /*For animation of AYAN KHAN*/
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+@keyframes slideBottom { /*For animation in .content <h3>tag*/
+  0% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+@keyframes slideLeft { /*For animation in <p>tag*/
+  0% {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+/* Header={Logo,NavBar Links(Home,About,Skills,Projects,Resume,Contact)} */
+.header {
+  position: fixed;
+  top: 00px;
+  left: 00px;
+  width: 100%;
+  padding: 20px 10%;
+  background: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  background-color: #081b29;/*Background-color of Navigation bar*/
+}
+
+/* Logo = "Portfolio */
+.logo {
+  position: relative;
+  font-size: 40px;
+  color: whitesmoke;/*Color of "PORTFOLIO"*/ /*#DAA520*/
+  text-decoration: none;
+  font-weight: 700;
+  cursor: default;
+  opacity: 0;
+  animation: slideRight 1s ease forwards; /*keyframe = slideRight*/
+}
+
+
+
+
+/*NavBar Links(Home,ABout,Skills,Projects,Resume,Contact)*/
+.navBar a { 
+  text-decoration: none;
+  display: inline-block;
+  font-size: 25px;
+  color: aqua;/*Color of Links <a>tag*/
+  font-weight: 500;
+  margin-left: 35px;
+  transition: 0.3s;
+  opacity: 0;
+  animation: slideTop 0.51s ease forwards;/*keyFrame = slideTop*/
+  animation-delay: calc(.2s * var(--i));
+}
+.navBar a:hover { /*When hovered on a navBar links <a>tag*/
+  color: mediumpurple;
+}
+
+
+
+/*-------------------------Home Content--------------------------*/
+/* Home Section */
+.home {
+  position: relative;
+  height: 800px;
+  width: 100%;
+  justify-content: space-between;
+  height: 100vh;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  padding: 10%;/*Padding from all sides of home section*/
+  /* background-color: rgb(11, 231, 231); */
+}
+
+/* home --> content */
+.content {
+  max-width: 600px;
+}
+
+/* home ---> content --> <h3>tag contents */
+.content h3 {
+  font-size: 32px;
+  font-weight: 700;
+  opacity: 0;
+  animation: slideBottom 1s ease forwards;/*keyFrame = slideBottom*/
+  animation-delay: 0.5s;
+}
+
+
+/* home ---> content --> <h3> nth of type(2) */
+.content h3:nth-of-type(2) {
+  margin-bottom: 30px;
+  animation: slideTop 1s ease forwards;
+  animation-delay: 0.7s;
+  font-weight: 500;
+}
+
+/* home ----> content ---> <h3> --> span content */
+.content h3 span {
+  color: #ff00ff;/*Color of Span Animating Content*/
+  /* rgba(206, 206, 4, 0.945) */
+  /* #ff6f61 #f08080 */
+  /* #008b8b */
+  /* #ff00ff */
+  font-weight: bold;
+  font-style: oblique;
+}
+
+.content h3, p{
+  color: darkviolet;
+  /* #9932CC */
+}
+
+/* home ---> content --> <h1>tag (AYAN KHAN)*/
+.content h1 {
+  font-size: 56px;
+  font-weight: 700;
+  margin: -3px 0;
+  opacity: 0;
+  animation: slideRight 0.9s ease forwards;/*keyFrame = slideRight*/
+  animation-delay: 1s;
+  color: rebeccapurple;/*Color of (AYAN KHAN)*/
+}
+
+
+/* home ---> content --> <p>tag contents */
+.content p {
+  font-size: 20px;
+  opacity: 0;
+  animation: slideLeft 0.7s ease forwards;/*keyFrame = slideLeft*/
+  animation-delay: 1s;
+}
+
+
+/* home ---> sci --> <a>tag  social meidia links */
+.sci a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: 2px solid blueviolet;/*BorderColor of Social Media Links*/
+  border-radius: 50%;
+  font-size: 20px;
+  color: #003366;/*logoColor of Social media links*/
+  text-decoration: none;
+  transition: 0.5s ease;
+  opacity: 0;
+  animation: slideLeft 0.8s ease forwards;
+  animation-delay: calc(.2s * var(--i));
+  margin: 30px 15px 30px 0;
+  box-shadow: 0 0 5px purple, 0 0 25px purple;/*Shadow of Social Media Links*/
+}
+/* Social Media Links when Hovered */
+.sci a:hover {
+  color: aquamarine;/*logoColor changes*/
+  background-color: indigo;/*backgorundColor changes*/
+  box-shadow: 0 0 25px purple,
+              0 0 30px purple;/*Shadow of Links gets wider*/
+}
+
+/* home ---> content --> btnbox */
+.btnbox {
+  display: inline-block;
+  padding: 12px 20px;
+  background: rgba(76, 0, 130, 0.863); /*Backgorund of "More About me"*/
+  border-radius: 40px;
+  font-size: 16px;
+  color: aquamarine;/* textColor of "More About Me" */
+  letter-spacing: 1px;
+  text-decoration: none;
+  font-weight: 600;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  opacity: 0;
+  animation: slideTop 1s ease forwards;/*keyFrame = slideTop*/
+  animation-delay: 1s;
+  box-shadow: 0 0 5px purple, 0 0 25px purple, 0 0 30px purple;
+}
+
+/*btnbox when hovered*/
+.btnbox:hover {
+  box-shadow: 0 0 25px purple,
+               0 0 30px purple, 
+                0 0 40px purple, 
+                 0 0 50px purple,
+                 0 0 100px purple;/*Shadow of btnbox gets wider*/
+}
+
+
+/* Profile Picture in the Home Section */
+/* home --> pic*/
+.home #pic{
+  height: 450px;
+  width: 400px;
+  border: 2px solid purple;/*borderColor of Profile Pic*/
+  border-radius: 50%;
+  background-image: url(/PFP1.jpg);/*Profile Pic*/
+  background-size: cover;
+}
+
+
+
+/*-------------------------About Section--------------------------*/
+.about{
+  height: 840px;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  gap: 1.5rem;
+  padding-top: 80px;
+  background-color: rgb(15, 163, 163);
+}
+
+/* about --> about-img */
+.about-img{
+  padding-left: 480px;
+}
+
+/* Profile Pic of About Me */
+/* about ---> about-img --> <img>tag */
+.about-img img{
+  height: 400px;
+  width: 400px;
+  border: 3px solid darkorchid;/*Border of iMage*/
+  /* border-radius: 50%; */
+  box-shadow: 0 0 30px rgb(150, 17, 207),
+               0 0 50px rgb(150, 17, 207),
+                0 0 60px rgb(150, 17, 207),
+                 0 0 80px white;/*Shadow of image*/
+}
+
+/* about ---> about-text --> <h2>tag content */
+/* The heading = "About Me" */
+.about-text h2{
+  font-size: 60px;
+  text-align: center;
+  color: rebeccapurple;/*color of "About Me"*/
+}
+
+/* about ----> about-text ---> <h2>tag --> span tag contrent("Me")*/
+/* "Me" */
+.about-text h2 span{
+   color: #F5F5DC;/*Color of "Me" in text="About Me"*/
+}
+
+/* about ---> about-text --> <h4>tag content("Web Developer") */
+/* "Web Developer" */
+.about-text h4{
+  font-size: 29px;
+  font-weight: 600;
+  color: darkorchid;/*textColor of "Web Developer"*//*Original = "darkMagenta"*/
+  /* rgb(187, 2, 187) */
+  line-height: 1.7;
+  padding-right: 20px;
+  text-align: center;
+  /* margin: 15px 0 30px; */
+}
+
+/* about ---> about-text --> <p>tag contents*/
+/* ABout Me Paragrapgh */
+.about-text p{
+  font-size: 16px;
+  font-weight: 900;
+  color: #003366;/*textColor of <p>tag*/
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  padding: 0 5%;
+  text-align: center;
+}
+
+/* about ---> about-text --> aboutbtn */
+.about-btn{
+  text-align: center;
+}
+/* about ----> about-text ---> aboutbtn --> <a>tag */
+/* "More About Me */
+.about-text .about-btn a {
+  display: inline-block;
+  padding: 12px 20px;
+  background: rgba(76, 0, 130, 0.863); /*Backgorund of "More About me"*/
+  border-radius: 40px;
+  font-size: 16px;
+  color: aquamarine;/* textColor of "More About Me" */
+  letter-spacing: 1px;
+  text-decoration: none;
+  font-weight: 600;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  opacity: 0;
+  animation: slideTop 1s ease forwards;/*keyFrame = slideTop*/
+  animation-delay: 1s;
+  box-shadow: 0 0 5px purple, 0 0 25px purple, 0 0 30px purple;
+}
+
+
+.about-text .about-btn a:hover {
+  box-shadow: 0 0 25px rgba(127, 255, 212, 0.726), 
+               0 0 30px purple,
+                0 0 40px purple, 
+                 0 0 100px purple;/*Shadow of btnbox gets wider*/
+}
+
+
+
+
+
+/*-------------Skills Section---------------*/
+/* My Skills */
+#skills-head{
+  text-align: center;
+  background-color: rgb(11, 231, 231);
+  font-size: 60px;
+  text-align: center;
+  color: rebeccapurple;
+  padding: 80px 90px;
+}
+/* Color of Span tag(SKILLS) */
+#skills-head span{
+  color: rgba(206, 206, 4, 0.945);
+  /* rgba(206,206,4,0.945) */
+}
+
+/* Container conataining both Technical and Professional Skills */
+#skills{
+  height: 650px;
+  text-transform: uppercase;
+  font-style: oblique;
+  display: flex;
+  text-align: center;
+  background-color: rgb(11, 231, 231);
+  list-style: none;
+}
+
+/* Skill --> h1 */
+/* Heading : TECHNICAL & PROFESSIONAL SKILLS */
+.skill h1{
+  text-align: center;
+  color: aqua;
+  cursor: default;
+}
+
+/* Skill ---> li --> h3 */
+.skill li h3{
+  margin: 5px;
+  cursor: default;
+}
+
+/* Both TECHNICAL SKILLS & TECHNICAL SKILLS Box */
+.skill{
+  background-color: #081b29;
+  height: 500px;
+  width: 500px;
+  margin: 60px auto;
+  color: rgb(184, 69, 184);
+  padding: 20px;
+  box-shadow: 0 0 28px purple,
+               0 0 28px purple,
+                0 0 28px darkmagenta;
+  border: 7px solid aqua  ;
+  border-style: double;
+  border-radius: 50px;
+  transition: background 0.5s, transform 0.5s;
+}
+.skill:hover{
+  transform: translateY(-10px);
+  box-shadow: 0 0 28px purple,
+               0 0 48px purple,
+                0 0 50px darkmagenta;
+}
+
+/* Skill --> li */
+.skill li{
+  margin: 20px 0;
+  padding: 10px;
+}
+
+/* Progress Line for Technical Skills */
+.bar{
+  background-color: #081b29;
+  display: block;
+  height: 20px;
+  border: 1px solid purple;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 
+              0 1px 2px rgba(0,0,0,0.24);
+  transition: all .3s cubic-bezier(0.25,0.8,0.25,1);
+}
+.bar:hover{
+  box-shadow: 0 14px 28px purple, 
+              0 10px 10px purple;
+}
+.bar span{
+  height: 20px;
+  float: left;
+  background: linear-gradient(135deg, white 0%, aqua 100%);
+}
+
+/* Progress Line animation */
+.html{
+  width: 90%;
+  animation: html 3s; /*KeyFrame = html*/
+}
+@keyframes html{
+  0%{
+    width: 0%;
+  }
+  100%{
+    width: 90%;
+  }
+}
+
+.css{
+  width: 80%;
+  animation: css 3s; /*KeyFrame = css*/
+}
+@keyframes css{
+  0%{
+    width: 0%;
+  }
+  100%{
+    width: 80%;
+  }
+}
+
+.javascript{
+  width: 70%;
+  animation: javascript 3s; /*KeyFrame = javascript*/
+}
+@keyframes javascript{
+  0%{
+    width: 0%;
+  }
+  100%{
+    width: 70%;
+  }
+}
+
+.react{
+  width: 50%;
+  animation: react 3s; /*KeyFrame = react*/
+}
+@keyframes react{
+  0%{
+    width: 0%;
+  }
+  100%{
+    width: 50%;
+  }
+}
+
+/* Progress Line for Proffesional Skills */
+.bar2{
+  background-color: #081b29;
+  display: block;
+  height: 20px;
+  border: 1px solid purple;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 
+              0 1px 2px rgba(0,0,0,0.24);
+  transition: all .3s cubic-bezier(0.25,0.8,0.25,1);
+}
+.bar2:hover{
+  box-shadow: 0 14px 28px purple, 
+              0 10px 10px purple;
+}
+/* Progress Line Color */
+.bar2 span{
+  height: 20px;
+  float: left;
+  background: linear-gradient(135deg, white 0%, aqua 100%);
+}
+
+/* Progress Line animation */
+.communication{
+  width: 75%;
+  animation: communication 3s; /*KeyFrame = communication*/
+}
+@keyframes communication{
+  0%{
+    width: 0%;
+  }
+  100%{
+    width: 75%;
+  }
+}
+
+.creativity{
+  width: 90%;
+  animation: creativity 3s; /*KeyFrame = creativity*/
+}
+@keyframes creativity{
+  0%{
+    width: 0%;
+  }
+  100%{
+    width: 90%;
+  }
+}
+
+.team-work{
+  width: 60%;
+  animation: team-work 3s; /*KeyFrame = team-work*/
+}
+@keyframes team-work{
+  0%{
+    width: 0%;
+  }
+  100%{
+    width: 60%;
+  }
+}
+
+.project-management{
+  width: 80%;
+  animation: project-management 3s; /*KeyFrame = project-management*/
+}
+@keyframes project-management{
+  0%{
+    width: 0%;
+  }
+  100%{
+    width: 80%;
+  }
+}
+
+
+.btn{
+  /* color: #081b29; */
+  display:  block;
+  cursor: pointer;
+  padding: 12px 20px;
+  background: rgba(76, 0, 130, 0.863); 
+  border-radius: 40px;
+  font-size: 16px;
+  color: aquamarine;
+  letter-spacing: 1px;
+  text-decoration: none;
+  font-weight: 600;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  opacity: 0;
+  animation: slideTop 1s ease forwards;/*keyFrame = slideTop*/
+  animation-delay: 1s;
+  box-shadow: 0 0 5px purple, 0 0 25px purple, 0 0 30px purple;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  text-align: center;
+  width: 500px; 
+  margin-left: 429px;
+}
+.btn:hover{
+  box-shadow: 0 0 25px purple,
+  0 0 30px purple, 
+   0 0 40px purple, 
+    0 0 50px purple,
+    0 0 100px purple;
+}
+
+
+
+/*-------------------------Projects Section--------------------------*/
+ /*Full body of "My Projects" */
+.project{
+  height: 800px;
+  background-color: rgb(15, 163, 163);/*rgb(11, 231, 231);*/
+}
+
+ /*Div container "projects" */
+#projects{
+  color: whitesmoke;/*textColor of Projects section*/
+  font-size: 20px;
+  line-height: 1.4;
+  margin-bottom: 4rem;
+}
+
+ /*project ---> projects --> container contents */
+.container{
+  text-align: center;
+  padding: 80px 90px;
+}
+
+ /*project ---> projects --> container --> sub-title */
+ /*My Projects */
+.sub-title{
+  color: #663399;
+  text-align: center;
+  font-size: 60px;
+  padding-bottom: 70px;
+}
+.sub-title span{
+  color: #F5F5DC;
+}
+.projects-list{
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(259px,1fr));
+  grid-gap :40px;
+  margin-top: 50px;
+}
+.projects-list div{
+  /* background-color: #081b29; */
+  
+  padding: 40px;
+  font-size: 13px;
+  border-right: 10px;
+  border-radius: 20px;
+  transition: background 0.5s, transform 0.5s;
+  box-shadow: 1px 1px 20px purple,
+               1px 1px 40px purple;
+}
+
+#portfolio-box{
+  background: url(/portfolioThumbnail.jpg);
+  background-size: cover;
+}
+#tribute-box{
+  background: url(/jeffBezos.jpg) ;
+  background-size: cover;
+}
+#resume-page{
+  background: url(/resume.jpg);
+  background-size: cover;
+}
+.projects-list div i{
+  font-size: 50px;
+  margin-bottom: 30px;
+}
+.projects-list div h2{
+  font-size: 30px;
+  font-weight: 550;
+  margin-bottom: 15px;
+  color: aqua;
+}
+.projects-list div a{
+  text-decoration: none;
+  color: aquamarine;
+  font-size: 12px;
+  margin-top: 20px;
+  display: inline-block;
+}
+.projects-list div p{
+  color: #E6E6FA;
+}
+.button{
+  display: inline-block;
+  padding: 13px;
+  background: rgba(76, 0, 130, 0.644);
+  border-radius: 40px;
+  font-size: 16px;
+  color: aquamarine;
+  letter-spacing: 1px;
+  text-decoration: none;
+  font-weight: 600;
+  opacity: 0;
+  animation: slideTop 1s ease forwards;
+  animation-delay: 1s;
+  box-shadow: 0 0 5px aqua,
+              0 0 25px indigo;
+}
+.button:hover{
+  box-shadow: 0 0 5px aqua,
+  0 0 25px aqua,
+  0 0 50px aqua;  
+}
+.projects-list div:hover{
+  transform: translateY(-10px);
+}
+
+/*-------------------------------Resume Section---------------------------*/
+
+.res{
+  height: 800px;
+}
+
+.resume-head{
+  text-align: center;
+  background-color: rgb(11, 231, 231);
+  font-size: 60px;
+  text-align: center;
+  color: rebeccapurple;
+  padding: 70px 90px 50px 90px;
+}
+.resume-head span{
+  color: rgba(206,206,4,0.945);
+}
+
+.Resume{
+  height: 400px;
+  text-transform: uppercase;
+  display: flex;
+  text-align: center;
+  background-color: rgb(11, 231, 231);
+}
+
+.resumeBox h1{
+  text-align: center;
+  /* text-decoration: overline underline; */
+}
+
+#resume-caption{
+  width: 70%;
+  padding: 0px 10px 22px 10px;
+  margin-left: 199px;
+  text-align: center;
+  color: #003366;
+}
+
+.resumeBox h1{
+  color: rgba(0, 0, 139, 0.719);
+  background-color: whitesmoke;
+  cursor: context-menu;
+  width: 100%;
+}
+
+.resumeBox{
+  background-color: #081b29;
+  height: 299px;
+  width: 500px;
+  border-radius: 5%;
+  margin: 60px auto;
+  color: aqua;/*rgb(184, 69, 184)*/
+  padding: 20px;
+  box-shadow: 0 0 28px purple,
+               0 0 38px purple,
+                0 0 48px darkmagenta;
+  transition: background 0.5s, transform 0.5s;
+}
+.resumeBox:hover{
+  transform: translateY(-10px);
+  box-shadow: 0 0 28px purple,
+               0 0 48px purple,
+                0 0 50px darkmagenta;
+  cursor: pointer;
+}
+
+
+.resumeBox li{
+  margin-top: 30px;
+  text-align: center;
+  font-size: large;
+  font-weight: 500;
+  font-family: 'Times New Roman', Times, serif;
+}
+.resumeBox li::marker {
+  unicode-bidi: isolate;
+  font-variant-numeric: tabular-nums;
+  text-transform: none;
+  text-indent: 0px !important;
+  text-align: start !important;
+  text-align-last: start !important;
+}
+
+.download--btn a{
+  display: block;
+  cursor: pointer;
+  padding: 12px 20px;
+  background: rgba(76, 0, 130, 0.863); 
+  border-radius: 40px;
+  font-size: 16px;
+  color: aquamarine;
+  letter-spacing: 5px;
+  text-decoration: none;
+  font-weight: 600;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  opacity: 0;
+  animation: slideTop 1s ease forwards;/*keyFrame = slideTop*/
+  animation-delay: 1s;
+  box-shadow: 0 0 5px purple, 0 0 25px purple, 0 0 30px purple;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  width: 500px;
+  text-align: center;
+  margin-left: 420px;
+}
+.download--btn:hover a{
+  color: #081b29;
+  font-weight: 900;
+  background-color: aqua;
+  box-shadow: 0 0 25px purple,
+  0 0 30px purple, 
+   0 0 40px purple, 
+    0 0 50px purple,
+    0 0 100px purple;
+}
+.download--btn:hover a span{
+  color: #cece04;
+  font-weight: 1000;
+}
+.download--btn a span{
+  font-weight: 900;
+}
+
+
+
+/*----------------------------Conatact-------------------------*/
+
+.contact{
+  color: rgb(11,231,231);
+  height: 800px;
+  background-color: #081b29;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  gap: 3rem;
+  padding-left: 30px;
+  margin-top: 130px;
+}
+
+.contact-text h2{
+  font-size: 60px;
+  line-height: 1;
+  text-align: center;
+}
+.contact-text h2 span{
+  color: whitesmoke;
+}
+.contact-text h4{
+  margin: 15px 0;
+  color: rgb(228,228,228);
+  font-size: 20px;
+  font-weight: 600;
+}
+.contact-text pre{
+  color: rgb(177,177,177);
+  font-size: 20px;
+  line-height: 30px;
+  margin-bottom: 2rem;
+}
+
+.contact-list{
+  margin-bottom: 3rem;
+}
+.contact-list li{
+  margin-bottom: 10px;
+  display: block;
+}
+.contact-list i{
+  display: inline-block;
+  color: aquamarine;
+  font-size: 20px;
+  font-weight: 600;
+  transition: all .40s ease;
+}
+
+.contact-list li a:hover{
+  transform: scale(1.01) translateY(-5px);
+  color: black;
+}
+
+.contact-icons i{
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: 2px solid #0ef;
+  border-radius: 50%;
+  font-size: 20px;
+  color: #0ef;
+  text-decoration: none;
+  margin: 0px 15px 0px 0px;
+  transition: .5s ease;
+  opacity: 1;
+  animation: slideLeft 1s ease forwards;
+  animation-delay: calc(.2s * var(--i));
+}
+
+.contact-icons i:hover{
+  background-color: #0ef;
+  color: black;
+  box-shadow: 0 0 20px #0ef;
+}
+
+.contact-form form{
+  position: relative;
+}
+
+.contact-form form input, form textarea{
+  border: none;
+  outline: none;
+  width: 90%;
+  padding: 18px;
+  background-color: #fff;
+  color: black;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: .5rem;
+  border-radius: .5rem;
+}
+
+.contact-form textarea{
+  resize: none;
+  height: 220px;
+}
+
+.contact-form form .send{
+  display: inline-block;
+  padding: 14px 60px;
+  background-color: #0ef;
+  border-radius: 40px;
+  font-size: 18px;
+  color: #081b29;
+  letter-spacing: 5px;
+  text-decoration: none;
+  font-weight: 600;
+  opacity: 1;
+  animation: slideTop 1s ease forwards;
+  animation-delay: 2s;
+  box-shadow: 0 0 5px #0ef, 0 0 25px #0ef;
+}
+.contact-form form .send:hover{
+  cursor: pointer;
+  box-shadow: 0 0 5px cyan,
+              0 0 25px cyan,
+              0 0 50px cyan,
+              0 0 100px cyan,
+              0 0 200px cyan;
+}
+
+
+/*-------------------Last Text----------------------*/
+footer h4{
+  width: 100%;
+  text-align: center;
+  padding: 2px 0 0 0;
+  color: #081b29;
+  font-weight: 900;
+  margin-top: 10px;
+}
+footer span{
+  color: white;
+}
+
+footer p{
+  width: 100%;
+  color: #081b29;
+  font-weight: 100;
+  padding-top: 1px;
+  text-align: center;
+ 
+}
+
+
+/*-----------------------The Arrow Button-------------------*/
+.top{
+  position: fixed;
+  bottom: 2.1rem;
+  right: 2.1rem;
+}
+.top i{
+  color: aqua;
+  background-color: #081b29;
+  font-size: 20px;
+  padding: 10px;
+  border-radius: .5rem;
+}
+
+
+
+
+
+
+
+
+
