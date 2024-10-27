@@ -1,0 +1,34 @@
+@media (max-width : 375px){
+    .header {
+      position: fixed;
+      top: 00px;
+      left: 00px;
+      width: 375px;
+      padding: 20px 5px;
+      background: transparent;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      z-index: 100;
+      background-color: #081b29;/*Background-color of Navigation bar*/
+    }
+
+    .logo{
+        font-size: 40px;
+        padding-bottom: 5px;
+        padding-right: 0px;
+        text-align: start;
+    }
+
+    .navBar{
+        width: 375px;
+        line-height: 30px;
+    }
+    .navBar a{
+        margin-left: 35px;
+    }
+
+    .home{
+        margin-top: 300px;
+    }
+  }

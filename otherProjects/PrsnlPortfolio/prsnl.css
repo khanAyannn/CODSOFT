@@ -1,0 +1,104 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    height: 730px;
+    width: auto;
+    color: black;
+    background-color: rgba(36, 28, 28, 0.658);
+    border: 20px solid aqua;
+    cursor: default;
+}
+
+.logo {
+    font-size: 50px;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align: center;
+    padding-top: 15px;
+}
+.logo h1{
+    background-color: black;
+    display: block;
+    color: aqua;
+    
+}
+
+
+.container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 0;
+}
+.container .img{
+    margin-left: 100px;
+}
+.container .img img{
+    height: 400px;
+    width: 400px;
+    border: 7px solid aqua;
+    border-right-color: black;
+    border-left-color: black;
+    border-radius: 50%;
+    margin: 20px 00px;
+}
+
+.container .intro{
+    font-size: medium;
+    /* border: 3px solid black; */
+    margin: 10px 30px 10px 0px;
+    padding: 0 50px 30px 50px;
+}
+
+.container .intro h1{
+    font-size: 100px;
+    font-weight: 900;
+    padding: 0 0 30px 0;
+    text-align: center;
+}
+.container .intro h1 span{
+    color: aqua;
+}
+
+
+.container .intro h2{
+    text-align: center;
+    padding: 0 0 10px 0;
+    font-size: 30px;
+    font-style: oblique;
+}
+.container .intro h2 span{
+    color: aqua;
+}
+
+.container .intro h4{
+    font-size: 17px;
+    line-height: 2;
+}
+
+.container .intro p{
+    color: antiquewhite;
+    font-size: 16px;
+    font-weight: 500;
+    font-style: italic;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.more{
+    margin-top: 20px;
+    text-align: center;
+}
+
+.more .btn a{
+    color: whitesmoke;
+    background-color: black;
+    padding: 5px 7px;
+    display: inline;
+    border: 3px solid aqua;
+    text-decoration: none;
+}
